@@ -33,7 +33,7 @@ foreach($files as $folder){
 		continue;
 	}
 	echo "Started conversion of world '$folder'.\n\n";
-	exec("java -jar AnvilToRegion.jar " . $worldDir . "\\" . $folder, $output, $error);
+	exec("java -jar AnvilToRegion.jar $worldDir\\$folder", $output, $error);
 	if($error !== 0){
 		echo "There was a problem converting '$folder'. Maybe it is not a valid Anvil world?\n\n";
 		unset($output);
